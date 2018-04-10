@@ -11,7 +11,13 @@ int check_cycle(listint_t *list)
 	listint_t *copy;
 	listint_t *copyhead;
 	listint_t *tmp;
-
+	
+	if (!list)
+		return(0);
+	
+	if (list->n == list->next->n)
+		return (1);
+	
 	copy = malloc(sizeof(listint_t));
 	copy->n = list->n;
 	copy->next = NULL;
