@@ -8,46 +8,21 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *copy;
-	listint_t *copyhead;
-	listint_t *tmp;
-	
-	if (!list)
-		return(0);
-	
-	if (list->n == list->next->n)
-		return (1);
-	
-	copy = malloc(sizeof(listint_t));
-	copy->n = list->n;
-	copy->next = NULL;
-	copyhead = copy;
+	listint_t *fast;
+	fast = list->next;
 
-	while (list)
+	while(list)
 	{
-		if (list->next == NULL)
-			break;
-		copy = copyhead;
-		while (copy)
-		{
-			if (list->next->n == copy->n)
-			{
-				free_listint(copyhead);
-				return (1);
-			}
+		if (fast == NULL)
+			return (0);
 
-			if (copy->next == NULL)
-				break;
-			copy = copy->next;
-		}
-
+		if (fast == list)
+			return (1);
 		list = list->next;
-		/*add node to end of copy list*/
-		tmp = malloc(sizeof(listint_t));
-		tmp->n = list->n;
-		tmp->next = NULL;
-		copy->next = tmp;
+		if ((fast = fast->next) == NULL)
+			return (0);
+		fast = fast->next;
+
 	}
-	free_listint(copyhead);
 	return (0);
 }
