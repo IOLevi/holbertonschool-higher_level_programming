@@ -27,9 +27,9 @@ int main(void)
     print_listint(head);
 
     if (check_cycle(head) == 0)
-        printf(Linked list has no cyclen);
+        printf("Linked list has no cycle\n");
     else if (check_cycle(head) == 1)
-        printf(Linked list has a cyclen);
+        printf("Linked list has a cycle\n");
 
     current = head;
     for (i = 0; i < 4; i++)
@@ -38,9 +38,9 @@ int main(void)
     current->next = head;
 
     if (check_cycle(head) == 0)
-        printf(Linked list has no cyclen);
+        printf("Linked list has no cycle\n");
     else if (check_cycle(head) == 1)
-        printf(Linked list has a cyclen);
+        printf("Linked list has a cycle\n");
 
     current = head;
     for (i = 0; i < 4; i++)
