@@ -12,15 +12,19 @@ listint_t *insert_node(listint_t **head, int number)
     listint_t *new;
     listint_t *tmp;
 
-    /* empty list */
-    if (!*head)
-        return (NULL);
-
     hptr = *head;
 
     new = malloc(sizeof(listint_t));
+    if (!new)
+        return (NULL);
     new->n = number;
     new->next = NULL;
+
+    if (!hptr)
+    {
+        *head = new;
+        return (new);
+    }
 
     while (hptr)
     {
