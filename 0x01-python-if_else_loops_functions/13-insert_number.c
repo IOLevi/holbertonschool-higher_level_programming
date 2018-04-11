@@ -24,7 +24,6 @@ listint_t *insert_node(listint_t **head, int number)
 
     while (hptr)
     {
-        //list of 1 or reaching end ofo list
         if (hptr->next == NULL)
         {
             if (number < hptr->n)
@@ -39,9 +38,6 @@ listint_t *insert_node(listint_t **head, int number)
             }
         }
 
-
-        // 0 1 2 4 8 16
-        //insert 15 (>= current node && <= node->next->n)
         if (number >= hptr->n && number <= hptr->next->n)
         {
             tmp = hptr->next;
@@ -50,8 +46,6 @@ listint_t *insert_node(listint_t **head, int number)
             return (new);
         }
 
-        // 1 2 3 4
-        //insert 0 at front of list
         if (number <= hptr->n && number <= hptr->next->n)
         {
             new->next = hptr;
