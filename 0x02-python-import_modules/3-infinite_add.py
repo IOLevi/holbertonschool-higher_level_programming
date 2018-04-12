@@ -5,4 +5,4 @@ if __name__ == "__main__":
     for i, d in enumerate(sys.argv):
         if i > 0:
             f += int(d)
-    print(d)
+    print(f)
