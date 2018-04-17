@@ -38,7 +38,11 @@ int is_palindrome(listint_t **head)
 	for (i = 0; i < len / 2; i++)
 	{
 		if (new[i] != new[len - 1 - i])
+		{
+			free(new);
 			return (0);
+		}
 	}
+	free(new);
 	return (1);
 }
