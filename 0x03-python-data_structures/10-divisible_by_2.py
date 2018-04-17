@@ -4,4 +4,3 @@ def divisible_by_2(my_list=[]):
     for i in mylist:
         a.append(True if i % 2 == 0 else False)
     return a
-

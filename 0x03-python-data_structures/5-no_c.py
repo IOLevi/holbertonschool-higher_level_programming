@@ -7,4 +7,3 @@ def no_c(my_string):
         i = my_string.index('C')
         my_string = my_string[:i] + my_string[i + 1:]
     return my_string
-
