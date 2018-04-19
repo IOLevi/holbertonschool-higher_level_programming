@@ -2,9 +2,11 @@
 def best_score(a_dictionary):
     a = []
     winner = None
-    for k, v in iter(a_dictionary):
-        a.append = v
-        if max(a) == v
+    if type(a_dictionary) is not dict:
+        return None
+    for k, v in a_dictionary.items():
+        a.append(v)
+        if max(a) == v:
             winner = k
 
     return winner
