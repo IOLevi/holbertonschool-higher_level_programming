@@ -35,7 +35,7 @@ class Square():
     def position(self, value):
         if isinstance(
                 value,
-                tuple) and isinstance(
+                tuple) and len(value) == 2 and isinstance(
                 value[0],
                 int) and isinstance(
                 value[1],
