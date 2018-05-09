@@ -44,9 +44,11 @@ class Rectangle():
 
     def perimeter(self):
         "returns perimeter"
+        if self.height == 0 or self.area == 0:
+            return 0
         return 2 * self.__height + 2 * self.__width
 
-    def __repr__(self):
+    def __str__(self):
         "representation of rectangle"
         a = ""
         if self.__width == 0 or self.__height == 0:
