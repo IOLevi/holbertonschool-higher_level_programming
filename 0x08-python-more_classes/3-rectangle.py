@@ -58,7 +58,3 @@ class Rectangle():
             if i < self.__height - 1:
                 a+='\n'
         return a
-a = Rectangle()
-a.height = 4
-a.width = 4
-print(a)
