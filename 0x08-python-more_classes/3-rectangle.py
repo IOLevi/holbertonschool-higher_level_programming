@@ -54,5 +54,11 @@ class Rectangle():
         if self.__width == 0 or self.__height == 0:
             return a
         for i in range(self.__height):
-            a += "#" * self.__width + "\n"
+            a += "#" * self.__width
+            if i < self.__height - 1:
+                a+='\n'
         return a
+a = Rectangle()
+a.height = 4
+a.width = 4
+print(a)
