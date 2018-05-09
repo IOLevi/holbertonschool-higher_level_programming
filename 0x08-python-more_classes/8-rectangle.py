@@ -47,6 +47,8 @@ class Rectangle():
 
     def perimeter(self):
         "returns perimeter"
+        if self.__height == 0 or self.__width == 0:
+            return 0
         return 2 * self.__height + 2 * self.__width
 
     def __str__(self):
@@ -55,7 +57,9 @@ class Rectangle():
         if self.__width == 0 or self.__height == 0:
             return a
         for i in range(self.__height):
-            a += "#" * self.__width + "\n"
+            a += "#" * self.__width
+            if i < self.__height - 1:
+                a += '\n'
         return a
 
     def __repr__(self):
