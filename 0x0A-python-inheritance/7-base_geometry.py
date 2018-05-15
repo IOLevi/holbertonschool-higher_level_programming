@@ -16,3 +16,7 @@ class BaseGeometry():
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(value))
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("./tests/1-my_list.txt")
