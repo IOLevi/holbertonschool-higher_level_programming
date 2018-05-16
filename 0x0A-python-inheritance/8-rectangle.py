@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 'problem 9'
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
-class Rectangle(__import__('7-BaseGeometry').BaseGeometry):
+class Rectangle(BaseGeometry):
 
     'rectangle class'
 

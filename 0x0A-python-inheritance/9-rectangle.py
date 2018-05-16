@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 "problem 9"
 
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-class Rectangle(__import__('7-BaseGeometry').BaseGeometry):
+
+class Rectangle(BaseGeometry):
 
     "rectangle class"
 
@@ -13,7 +15,7 @@ class Rectangle(__import__('7-BaseGeometry').BaseGeometry):
         self.integer_validator("height", height)
         self.__height = height
 
-    def area():
+    def area(self):
         "area"
         return self.__height * self.__width
 
