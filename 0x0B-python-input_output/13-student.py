@@ -22,11 +22,14 @@ class Student:
                     break
                 else:
                     flag = True
+        if attrs == []:
+            return {}
 
         if flag:
             new = {}
-            for k, d in attrs.items():
-                new.update((k, d))
+            for d in attrs:
+                if d in self.__dict__:
+                    new[d] = self.__dict__[d]
             return new
         else:
             return self.__dict__
