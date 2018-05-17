@@ -24,8 +24,8 @@ class Student:
 
         if flag:
             new = {}
-            for k, d in attrs.items():
-                new.update((k, d))
+            for d in attrs:  # list of strings
+                new.update(self.__dict__[d])
             return new
         else:
             return self.__dict__
