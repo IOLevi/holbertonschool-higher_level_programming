@@ -36,5 +36,4 @@ class Student:
 
     def reload_from_json(self, json):
         'reloads a student class from stored data'
-        for k, v in json.items():
-            self.__dict__.update((k, v))
+            self.__dict__ = json
