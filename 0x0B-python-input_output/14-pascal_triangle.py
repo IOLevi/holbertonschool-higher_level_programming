@@ -13,6 +13,4 @@ def pascal_triangle(n):
                 pt[i][a] = 1
             else:
                 pt[i][a] = pt[i-1][a-1] + pt[i-1][a]
-
-    for i in pt:
-        print(i)
+    return pt
