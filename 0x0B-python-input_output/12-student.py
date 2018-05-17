@@ -21,6 +21,8 @@ class Student:
                     break
                 else:
                     flag = True
+        if attrs == []:
+            return {}
 
         if flag:
             new = {}
