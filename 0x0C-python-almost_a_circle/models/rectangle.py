@@ -115,3 +115,11 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        b = dict(self.__dict__)
+        for key in self.__dict__:
+            if key.startswith("_Rectangle"):
+                b[key[12:]] = b.pop(key)
+        return b
+
