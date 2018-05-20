@@ -122,4 +122,3 @@ class Rectangle(Base):
             if key.startswith("_Rectangle"):
                 b[key[12:]] = b.pop(key)
         return b
-

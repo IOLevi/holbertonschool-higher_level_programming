@@ -14,18 +14,18 @@ class Square(Rectangle):
         "to string for square"
         return "[SQUARE] ({}) {}/{} - {}".format(self.id,
                                                  self.x, self.y, self.width)
-    
+
     @property
     def size(self):
         'size getter'
         return self.height
-    
+
     @size.setter
     def size(self, value):
         "size setter"
         self.width = value
         self.height = value
-    
+
     def update(self, *args, **kwargs):
         "assigns an argument to each attribute"
         p = len(args)
@@ -46,7 +46,7 @@ class Square(Rectangle):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-    
+
     def to_dictionary(self):
         b = dict(self.__dict__)
         for key in self.__dict__:
@@ -56,5 +56,3 @@ class Square(Rectangle):
         b.pop('height')
         b.pop('width')
         return b
-
-        
