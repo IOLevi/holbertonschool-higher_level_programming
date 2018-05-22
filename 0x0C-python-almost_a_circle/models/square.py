@@ -49,6 +49,7 @@ class Square(Rectangle):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        "doc string"
         b = dict(self.__dict__)
         for key in self.__dict__:
             if key.startswith("_Rectangle"):
