@@ -12,8 +12,7 @@ class TestBase(unittest.TestCase):
 
     def test_init_id(self):
         self.assertEqual(self.b1.id, 1)
-
-    def test_init_mult_id(self):
+        Base.__nb_objects = 0
         b2 = Base()
         b3 = Base()
         self.assertEqual(b2.id, 2)
@@ -22,8 +21,6 @@ class TestBase(unittest.TestCase):
     def test_init_id_val(self):
         b2 = Base(12)
         self.assertEqual(b2.id, 12)
-        b3 = Base()
-        self.assertEqual(b3.id, 2)
 
 
 if __name__ == "__main__":
