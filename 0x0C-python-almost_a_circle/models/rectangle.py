@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 "rectangle module"
-from .base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -118,6 +118,7 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        'to dictionary'
         b = dict(self.__dict__)
         for key in self.__dict__:
             if key.startswith("_Rectangle"):
