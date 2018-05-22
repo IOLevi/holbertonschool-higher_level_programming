@@ -9,6 +9,7 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         "init"
         super().__init__(size, size, x, y, id)
+        self.size = size  # test maybe remove
 
     def __str__(self):
         "to string for square"
