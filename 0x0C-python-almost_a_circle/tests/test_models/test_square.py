@@ -4,6 +4,8 @@
 
 import unittest
 from models.square import Square
+import sys
+from io import StringIO
 
 
 class TestSquare(unittest.TestCase):
@@ -49,6 +51,28 @@ class TestSquare(unittest.TestCase):
         f = Square(5)
         b = {'id': 1, 'size': 5, 'x': 0, 'y': 0}
         self.assertEqual(set(f.to_dictionary()), set(b))
+
+    def test_display(self):
+        "test 5.5"
+        r1 = Square(1)
+        output = StringIO()
+        sys.stdout = output
+        r1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "#\n")
+        output.close()
+
+    def test_displayxy(self):
+        "test 5.6"
+        r1 = Square(1)
+        r1.x = 1
+        r1.y = 1
+        output = StringIO()
+        sys.stdout = output
+        r1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "\n #\n")
+        output.close()
 
 
 if __name__ == "__main__":

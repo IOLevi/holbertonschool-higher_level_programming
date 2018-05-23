@@ -50,11 +50,23 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.area(), 16)
 
     def test_display(self):
+        "test 5.5"
         output = StringIO()
         sys.stdout = output
         self.r1.display()
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), "#\n")
+        output.close()
+
+    def test_displayxy(self):
+        "test 5.6"
+        self.r1.x = 1
+        self.r1.y = 1
+        output = StringIO()
+        sys.stdout = output
+        self.r1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "\n #\n")
         output.close()
 
     def test_str_overload(self):
