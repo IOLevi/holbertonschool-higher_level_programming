@@ -27,6 +27,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b2.id, 12)
 
     def test_to_json_string(self):
+        "test 3"
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
