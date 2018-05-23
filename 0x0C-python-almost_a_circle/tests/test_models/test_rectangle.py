@@ -5,6 +5,8 @@
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
+from io import StringIO
+import sys
 
 
 class TestRectangle(unittest.TestCase):
@@ -47,10 +49,13 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle(4, 4)
         self.assertEqual(r2.area(), 16)
 
-    # def test_display(self):
-    #     self.assertEqual(self.r1.display(), "#")
-    # not sure how to test this other than using
-    # in module pytest
+    def test_display(self):
+        output = StringIO()
+        sys.stdout = output
+        self.r1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "#\n")
+        output.close()
 
     def test_str_overload(self):
         "test 6"
