@@ -115,6 +115,78 @@ class TestRectangle(unittest.TestCase):
         a = [f.to_dictionary()]
         a = Rectangle.to_json_string(a)
         self.assertEqual(type(a), str)
+    
+    def test_checkers_1(self):
+        "test 11"
+        Base._Base__nb_objects = 0
+        a = Rectangle(1, 2)
+        self.assertEqual(str(a), "[Rectangle] (8) 0/0 - 1/2")
+        
+        b = Rectangle(1, 2, 3)
+        self.assertEqual(str(b), "[Rectangle] (9) 3/0 - 1/2")
+
+        c = Rectangle(1, 2, 3, 4)
+        self.assertEqual(str(c), "[Rectangle] (10) 3/4 - 1/2")
+
+        with self.assertRaises(TypeError):
+            Rectangle("1", 2)
+        
+        with self.assertRaises(TypeError):
+            Rectangle(1, "2")
+
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, "3")
+
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, 3, "4")
+        
+        with self.assertRaises(ValueError):
+            Rectangle(-1, 2)
+        
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)
+
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
+
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, -3)
+        
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, 3, -4)
+        
+        
+        
+        # e = Rectangle(1, "2")
+        # self.assertEqual()
+
+        # f = Rectangle(1, 2, "3")
+        # self.assertEqual()
+
+        # g = Rectangle(1, 2, 3, "4")
+        # self.assertEqual()
+
+        # h = Rectangle(-1, 2)
+        # self.assertEqual()
+
+        # i = Rectangle(1, -2)
+        # self.assertEqual()
+
+        # j = Rectangle(0, 2)
+        # self.assertEqual()
+
+        # k = Rectangle(1, 0)
+        # self.assertEqual()
+
+        # l = Rectangle(1, 2, -3)
+        # self.assertEqual()
+
+        # m = Rectangle(1, 2, 3, -4)
+        # self.assertEqual()
+
+
+
+
 
 
 if __name__ == "__main__":

@@ -32,6 +32,17 @@ class TestBase(unittest.TestCase):
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
         self.assertEqual(type(json_dictionary), str)
+        a = Base.to_json_string([{'id': 12}])
+        self.assertEqual(a, "[{\"id\": 12}]")
+        b = Base.from_json_string(None)
+        self.assertEqual(b, [])
+        c = Base.from_json_string("[]")
+        self.assertEqual(c, [])
+        d = Base.from_json_string('[{ "id": 89 }]')
+        self.assertEqual(d, [{'id': 89}])
+
+        e = Base.from_json_string('[{ "id": 89 }]')
+        self.assertEqual(type(e), list)
 
 
 if __name__ == "__main__":
