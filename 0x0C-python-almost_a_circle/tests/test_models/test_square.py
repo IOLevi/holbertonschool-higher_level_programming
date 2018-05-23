@@ -10,9 +10,11 @@ class TestSquare(unittest.TestCase):
     """unittest for Square"""
 
     def setUp(self):
+        'nothing'
         pass
 
     def test_square_init(self):
+        "test 1"
         f = Square(5)
         self.assertEqual(f.size, 5)
         self.assertEqual(f.area(), 25)
@@ -28,6 +30,7 @@ class TestSquare(unittest.TestCase):
             f.size = 0
 
     def test_square_update(self):
+        "test 2"
         f = Square(5)
         f.update(4)
         self.assertEqual(f.id, 4)
@@ -42,6 +45,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(str(f), "[Square] (4) 5/6 - 4")
 
     def test_to_dict(self):
+        "test 3"
         f = Square(5)
         b = {'id': 1, 'size': 5, 'x': 0, 'y': 0}
         self.assertEqual(set(f.to_dictionary()), set(b))
