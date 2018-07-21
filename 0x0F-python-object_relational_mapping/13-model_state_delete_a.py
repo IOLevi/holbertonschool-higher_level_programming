@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 #deletes all State objects containing the letter a from the database
 
 import sys
