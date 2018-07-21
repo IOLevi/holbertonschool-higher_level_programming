@@ -16,14 +16,12 @@ if __name__ == "__main__":
         charset="utf8")
     cur = conn.cursor()
     cur.execute(
-        "SELECT cities.name FROM cities INNER JOIN states ON cities.state_id=states.id WHERE states.name=%s ORDER BY cities.id ASC",
+        "SELECT cities.name FROM cities\
+         JOIN states ON cities.state_id=states.id\
+          WHERE states.name=%s ORDER BY cities.id ASC",
         (sys.argv[4],
          ))  # if not this look up escape functionality
     query_rows = cur.fetchall()
-    for i, row in enumerate(query_rows):
-        if i != len(query_rows) - 1:
-            print("".join(row), end=", ")
-        else:
-            print("".join(row))
+    print(", ".join(cities[0] for cities in query_rows))
     cur.close()
     conn.close()
