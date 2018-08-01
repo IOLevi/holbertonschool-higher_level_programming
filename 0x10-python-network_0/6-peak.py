@@ -9,4 +9,8 @@ def find_peak(list_of_integers):
     if yes, return
     if not, go t 
     """
-    return max(list_of_integers)
+    try:
+        a = max(list_of_integers)
+        return a
+    except:
+        return None
