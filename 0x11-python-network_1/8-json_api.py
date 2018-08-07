@@ -13,7 +13,7 @@ if __name__ == "__main__":
     except BaseException:
         target = ""
     r = requests.post(
-        'http://34.206.234.184:39991/search_user',
+        'http://0.0.0.0:5000/search_user',
         data={
             'q': target})
 
