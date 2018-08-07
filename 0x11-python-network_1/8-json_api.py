@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     try:
         target = sys.argv[1]
-    except BaseException:
+    except IndexError:
         target = ""
     r = requests.post(
         'http://0.0.0.0:5000/search_user',
@@ -19,11 +19,8 @@ if __name__ == "__main__":
 
     try:
         j = r.json()
-        if len(j) == 0:
-            print("No result")
-        else:
-            print("[{}] {}".format(j['id'], j['name']))
-    except ValueError:
-        print("Not a valid JSON")
+        print("[{}] {}".format(j['id'], j['name']))
     except KeyError:
         print("No result")
+    except:
+        print("Not a valid JSON")
