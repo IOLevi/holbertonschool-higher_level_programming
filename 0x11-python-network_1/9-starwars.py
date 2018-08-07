@@ -1,4 +1,4 @@
-# !/usr/bin/python3
+#!/usr/bin/python3
 # a Python script that takes in a string and sends
 # a search request to the Star Wars API
 
