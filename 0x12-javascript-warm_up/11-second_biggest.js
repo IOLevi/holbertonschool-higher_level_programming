@@ -3,7 +3,7 @@
 if (process.argv.length === 2) {
   console.log(0);
 } else if (process.argv.length === 3) {
-  console.log(1);
+  console.log(0);
 } else {
   let a = process.argv.slice(2, process.argv.length).map(Number);
   a.sort(function (a, b) { return a - b; });
