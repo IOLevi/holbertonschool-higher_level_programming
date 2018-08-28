@@ -5,5 +5,8 @@ if (process.argv.length === 2) {
 } else if (process.argv.length === 3) {
   console.log(1);
 } else {
-  console.log(process.argv.slice(2, process.argv.length).sort(function (a, b) { return b - a; })[1]);
+  let a = process.argv.slice(2, process.argv.length);
+  a.sort(function (a, b) { return a - b; });
+  a.pop();
+  console.log(a.pop());
 }
