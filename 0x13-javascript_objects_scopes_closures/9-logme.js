@@ -1,3 +1,4 @@
+#!/usr/bin/node
 exports.logMe = function (item) {
   if (this.x === undefined) {
     this.x = 0;
